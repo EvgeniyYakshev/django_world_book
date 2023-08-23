@@ -1,0 +1,15 @@
+<body style="background:linear-gradient(to top, #FFFF00, #c9d1ff, #00FA9A)" xmlns="http://www.w3.org/1999/html">
+</body>
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Сохранить" />
+
+</form>
+{% endblock %}

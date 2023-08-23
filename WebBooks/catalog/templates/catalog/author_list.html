@@ -1,0 +1,20 @@
+<body style="background:linear-gradient(to top, #2639fa, #c9d1ff, #00FFFF)" xmlns="http://www.w3.org/1999/html">
+</body>
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+   <h1>Список авторов в БД</h1>
+   {% if author_list %}
+       {% for author in author_list.all %}
+        <p>  {{ author.first_name}}  {{author.last_name}} ,
+            <p style=align="center"></p>
+            <strong> ****** Родился- </strong>{{author.date_of_birth}},
+            <strong> ****** Дата публикации первой книги-   </strong>  {{author.date_of_death}} </p>
+       {% endfor %}
+   {% else %}
+      <p>В базе данных нет авторов</p>
+   {% endif %}
+{% endblock %}
+
